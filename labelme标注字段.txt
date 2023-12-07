@@ -1,0 +1,43 @@
+{
+	"version": "4.4.0",
+	"flags": {},
+	"shapes":
+	[
+        {
+            "label": "legal",
+            "points": [[662.0, 948.6], [1508.6, 1968.6]],
+             "group_id": null,
+             "shape_type": "rectangle", #polygon
+             "flags": {}
+        }
+    ],
+
+
+    "imagePath": "1_P1.jpg",
+    "imageData": "/9j/4AAQSkZJRgABAQAAAQABAAD.....,
+    'imageHeight': 640,
+    'imageWidth': 640
+}
+    1.shapes: 其中包含了标注的具体信息，由列表组成，每一个元素是一个字典，一个字典包含了一个标注框的相关信息，
+如label是标签，points是标注的点，points的取值与shape_type相关，
+这里取的是rectangle即直接由矩形的对角线上两点确定一个矩形框。因此points中也只有两个点的信息，点的坐标为(x,y) ，
+坐标轴原点在左上角，原点向下为y正向，向右为x正向。
+    2.imagePath是标注图片的文件名
+    3.shape_type如上所说，记录了标记时选择的方式。
+
+
+重点关注的是：
+
+"shapes"：存储标注instance的闭合多边形的信息，重点关注：label：类别名称；points：闭合多边形的每个点的x,y坐标；
+
+"line_color"：闭合多边形的边界线颜色；
+
+"fill_color"：闭合多边形的填充颜色；
+
+"imagePath"：图片名称；
+
+"imageData"：图片路径（加密后）；
+
+"imageHeight"：图片高；
+
+"imageWidth"：图片宽；
